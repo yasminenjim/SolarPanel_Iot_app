@@ -1,0 +1,121 @@
+
+<ons-page id="home" style="text-align: center;"  class="page__background home-page" >
+ <ons-toolbar class="toolbar-background-home" >
+    <div class="left">
+	    <!-- toggle splitter -->
+	    <ons-toolbar-button role="button" component="button/menu"
+				       onclick="togglesplitter();">
+        <span style="color: rgb(243, 246, 247);">
+        <i class="fa-solid fa-bars"></i>
+      </span>
+      </ons-toolbar-button>
+    </div>
+</div>
+
+    <div class="center" style="color:rgb(255, 255, 255);text-align: center;font-size: 30px;margin-top:50px">Tools</div>
+    
+    <div class="right"  onclick="navigatetopage('./pages/bluetooth.html');"  >
+     <span id="btconnectto" style="color:white"></span>   	    
+     <ons-icon id="bticononhome"   class="mx-auto" icon="fa-bluetooth-b" aria-hidden="true" size="28px"
+     style="color:white;"   ></ons-icon>
+     </div>	    
+  </ons-toolbar>
+
+
+  <!------------------------------------------------------------------------>           
+
+<div class="content-home">
+   <div  style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; margin: 130px auto;">
+     <div style="width: 40%; margin: 1%;">
+       <ons-card class="card-style" style="text-align: center;" onclick='navigatetopage("./pages/bluetooth.html");'>
+        <!--this is done with Font Awesome library-->
+        <span style="color: #0e4b64;">
+         <i class="icon fa-brands fa-bluetooth" style="font-size: 36px;"></i>
+         </span>
+         <p>Bluetooth</p>
+       </ons-card>
+     </div>
+     <div style="width: 40%; margin: 1%;">
+       <ons-card style="text-align: center;"  onclick='navigatetopage("./pages/testpage.html");'>
+        <span style="color: #0e4b64;">
+         <i class="icon fa-regular fa-file" style="font-size: 36px;"></i>
+         </span>
+         <p>Can</p>
+       </ons-card>
+     </div>
+     <div style="width: 40%; margin: 1%;">
+       <ons-card style="text-align: center;" onclick="navigatetopage('./pages/motors.html')" >
+        <span style="color: #0e4b64;">
+         <i class="icon fa-solid fa-gear" style="font-size: 36px;"></i>
+        </span>
+         <p>Configuration</p>
+       </ons-card>
+     </div>
+    <div style="width: 40%; margin: 1%;">
+       <ons-card style="text-align: center;">
+        <span style="color: #0e4b64;">
+         <i class="icon fa-solid fa-barcode" style="font-size: 36px;"></i>
+         </span>
+         <p>Serial Number</p>
+       </ons-card>
+     </div>
+     <div style="width: 40%; margin: 1%;">
+       <ons-card style="text-align: center;">
+        <span style="color: #0e4b64;">
+         <i class="icon fa-solid fa-chart-simple" style="font-size: 36px;"></i>
+         </span>
+         <p>Dashboard</p>
+       </ons-card>
+     </div>
+     <div style="width: 40%; margin: 1%;">
+       <ons-card style="text-align: center;">
+      
+          <span style="color: #0e4b64;">
+         <i class="icon fa-regular fa-file" style="font-size: 36px; "></i>
+        </span>
+      
+         <p>File</p>
+       </ons-card>
+     </div>
+     <div style="width: 40%; margin: 1%;">
+	     <ons-card style="text-align: center;" onclick="fble.sendjson({a:1,b:2,txt:'foo'})" >
+     
+         <span style="color: #0e4b64;">
+        <i class="icon fa-regular fa-file" style="font-size: 36px; "></i>
+       </span>
+     
+        <p>send via bt</p>
+      </ons-card>
+    </div>
+    <div style="width: 40%; margin: 1%;">
+      <ons-card style="text-align: center;">
+     
+       <!--<span style="color: #0e4b64;" fvar='{name:"data.ctr"}' ></span> | 
+      <div style="font-size:30px;" fvar='{name:"data.r",digits:1}'> </div> -->
+
+       <span style="color: #0e4b64;">
+        <i class="icon fa-regular fa-file" style="font-size: 36px; "></i>
+       </span>
+     
+        <p>File</p>
+
+        
+      </ons-card>
+    </div>
+     
+       
+   </div>
+  </div>
+   <script>
+    
+     ons.getScriptPage().onInit = function() {
+	                                      console.log("home onInit "); 
+                                            }; 	  
+  function togglesplitter(){
+   console.log("toggle");
+  var s=document.getElementById('appSplitter');s.left.toggle().then((r)=>{fvar.scan(s).update();console.log("splitter updated");});
+  }
+ 
+  </script>
+ </ons-page>
+ 

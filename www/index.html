@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="vendor/OnsenUI/css/onsenui.css">
+	    	<link rel="stylesheet" type="text/css" href="vendor/OnsenUI/css/onsen-css-components.min.css">
+        <link rel="stylesheet" href="css/index.css">
+        <script type="text/javascript" src="vendor/jquery/jquery-3.6.0.min.js"></script>
+	<link rel="stylesheet" href="css/app.css"> 
+ 
+
+        <title>template</title>
+        <link rel="stylesheet" href="vendor/@fortawesome/fontawesome-free/css/all.min.css">
+      </head>
+    <body>
+    <ons-navigator id="navigator" >
+      <ons-page id="login.html" class="page__background login-page">
+        
+
+	<div class="content">
+		<!--<img src="../img/Capturelog.PNG" style="width: fit-content; height: fit-content;" > -->
+        <div style="text-align: center; margin-top: 300px">
+        <p>
+          <ons-input id="username" placeholder="Username" modifier="underbar" style="color:rgb(255, 255, 255);"></ons-input>
+        </p>
+      
+        <p>
+          <ons-input id="password" placeholder="Password"type="password" modifier="underbar" style="color:rgb(255, 255, 255);"></ons-input>
+        </p>
+      
+        <p>
+          <ons-button id="login" onclick="login()">Sign in</ons-button>
+        </p>
+        </div>
+        </div>
+ 
+
+      </ons-page>
+    </ons-navigator>
+
+
+
+<!--  splitter side menue  -->
+<template id="splitter.html">  
+ <ons-page id="splitter">   
+    <ons-splitter id="appSplitter">                                                               
+                            <ons-splitter-side id="menu" swipeable swipe-target-width="50px" side="left" width="250px" collapse>
+                              <ons-page id="menuPage">    
+
+			        <ons-row>
+			          <ons-list id="menuList" class="w-100 background-grey" >
+			            <ons-list-title><br></ons-list-title>
+					  ESP <br>
+					  version <span style="color: rgb(68, 160, 207);" fvar='{name:"version"}' ></span> <br> 
+					  <span style="color: rgb(68, 160, 207);" fvar='{name:"compiled"}' ></span> <br>
+			            <ons-list-item id="appSettings" modifier="chevron"
+					    onclick="navigatetopage('./pages/settings.html')" tappable>
+			            	<div class="left">
+			            	 <ons-icon class="mx-auto" icon="fa-cog" size="20px"></ons-icon>
+			            	</div>
+			            	<div class="center" mlang="settings">
+			            	    Settings
+			            	</div>
+			            </ons-list-item> 
+			            <ons-list-item id="firmwareUpdate" modifier="chevron nodivider"
+					    onclick="navigatetopage('./pages/firmwareupdate.html')" tappable> 
+			            	<div class="left">
+			            	 <ons-icon class="mx-auto" icon="fa-cloud-download-alt" size="20px">
+					 </ons-icon>
+			            	</div>
+			            	<div class="center" mlang="firmwareupdate">
+			            	 	Firmware Update
+			            	</div>
+			           	</ons-list-item>
+				   
+			            <ons-list-item id="debug" modifier="chevron nodivider"
+					    onclick="navigatetopage('./pages/debug.html')" tappable> 
+			            	<div class="left">
+			            	 <ons-icon class="mx-auto" icon="fa-bugs" size="20px">
+					 </ons-icon>
+			            	</div>
+			            	<div class="center">
+			            	 	Debug
+			            	</div>
+			           	</ons-list-item>
+				   </ons-list>
+				  </ons-row>	
+					<div class="center">
+			                    <span class="list-item__title text-black">Frenell GmbH</span>
+			                    <span class="list-item__subtitle text-black">Lotzbeckstraße 9</span>
+			                    <span class="list-item__subtitle">76185 Karlsruhe │ Germany</span>
+			                  </div>
+			      </ons-page>
+                            </ons-splitter-side>
+      <!-- page the splitter is attached to -->
+     <ons-splitter-content page="home.html"></ons-splitter-content> 
+   </ons-splitter>			    
+ </ons-page>      
+</template>     
+
+  <script src="cordova.js"></script>
+  <script src="js/index.js"></script>
+  <script src="js/app.js"></script>
+	<script src="js/fvar.js"></script>
+	<script src="js/fble.js"></script> 
+  <script type="text/javascript" src="vendor/OnsenUI/js/onsenui.js"></script>
+       
+    </body>
+</html>
